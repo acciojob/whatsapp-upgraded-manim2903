@@ -8,6 +8,7 @@ public class User {
         this.name=name;
         this.mobile=mobile;
     }
+    public User(){}
 
     public String getName() {
         return name;
@@ -24,4 +25,23 @@ public class User {
     public void setMobile(String mobile) {
         this.mobile = mobile;
     }
+
+    @Override
+    public boolean equals(Object that)
+    {
+
+        if(this == that)
+            return true;
+
+
+        if(that == null || that.getClass()!= this.getClass())
+            return false;
+
+
+        User obj = (User) that;
+
+
+        return (obj.getName().equals(this.getName())  && obj.getMobile() == this.getMobile());
+    }
+
 }

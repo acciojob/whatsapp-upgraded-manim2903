@@ -8,6 +8,7 @@ public class Group {
         this.name = name;
         this.numberOfParticipants = numberOfParticipants;
     }
+    public Group(){}
 
     public String getName() {
         return name;
@@ -23,5 +24,23 @@ public class Group {
 
     public void setNumberOfParticipants(int numberOfParticipants) {
         this.numberOfParticipants = numberOfParticipants;
+    }
+
+    @Override
+    public boolean equals(Object that)
+    {
+
+        if(this == that)
+            return true;
+
+
+        if(that == null || that.getClass()!= this.getClass())
+            return false;
+
+
+        Group obj = (Group) that;
+
+
+        return (obj.name.equals(this.name)  && obj.numberOfParticipants == this.numberOfParticipants);
     }
 }
